@@ -1,0 +1,10 @@
+{
+  "name": "scor-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "python3 scripts/optimize-images.py && node build.mjs && node scripts/relativize-links.mjs",
+    "preview": "python3 -m http.server 8095 --bind 0.0.0.0 --directory site"
+  }
+}

@@ -1,0 +1,8 @@
+node_modules/
+.cache/
+.DS_Store
+.env
+.env.*
+*.log
+__pycache__/
+.pytest_cache/

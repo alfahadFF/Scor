@@ -1,0 +1,13 @@
+{
+  "generatedAt": "2026-10-03T20:29:51.935848+00:00",
+  "sourceDir": "src/assets/media/originals",
+  "outputDir": "src/assets/media/generated",
+  "sizes": [
+    360,
+    640,
+    960,
+    1280,
+    1600
+  ],
+  "images": {}
+}
