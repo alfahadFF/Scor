@@ -145,7 +145,7 @@ def main() -> None:
             print(f"[image-optimize] skipped {source}: {exc}")
 
     MANIFEST.write_text(json.dumps({
-        "generatedAt": datetime.now(timezone.utc).isoformat(),
+        "generatedAt": None,
         "sourceDir": "src/assets/media/originals",
         "outputDir": "src/assets/media/generated",
         "sizes": SIZES,

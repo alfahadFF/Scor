@@ -87,3 +87,18 @@ src/assets/                  Brand, app, and media assets
 src/data/                    Website data
 site/                        Generated static output
 ```
+
+## Netlify Deployment
+
+This repository includes `netlify.toml`.
+
+Netlify should use:
+
+```text
+Build command: npm run build
+Publish directory: site
+```
+
+The generated publish folder contains the production `index.html`, language pages, alfa admin page, PWA manifest files, service worker, app icons, catalogs, and static assets.
+
+A root `index.html` is also included as a local fallback, but Netlify production publishing should use the `site` directory.

@@ -919,7 +919,7 @@ function pwaHead(lang = 'en') {
 }
 
 function serviceWorkerScript() {
-  const version = `${brand.year}-${Date.now()}`;
+  const version = `${brand.year}-pwa`;
   return `const CACHE_NAME='scor-cache-${version}';\nconst CORE_ASSETS=['/','/en/','/ar/','/de/','/tr/','/alfa/','/assets/app/icon-192.png','/assets/app/icon-512.png','/assets/app/icon-maskable-512.png','/assets/brand/scor-logo-word.png'];\nself.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE_NAME).then(cache=>cache.addAll(CORE_ASSETS)).then(()=>self.skipWaiting()))});\nself.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith('scor-cache-')&&key!==CACHE_NAME).map(key=>caches.delete(key)))).then(()=>self.clients.claim()))});\nself.addEventListener('fetch',event=>{const req=event.request;if(req.method!=='GET')return;const url=new URL(req.url);if(url.origin!==location.origin)return;event.respondWith(caches.match(req).then(cached=>cached||fetch(req).catch(()=>{if(req.mode==='navigate')return caches.match('/en/');return cached})))})`; 
 }
 
