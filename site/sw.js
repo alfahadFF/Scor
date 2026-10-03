@@ -1,4 +1,4 @@
-const CACHE_NAME='scor-cache-2026-pwa';
+const CACHE_NAME='scor-cache-2026-pwa-v2';
 const CORE_ASSETS=['/','/en/','/ar/','/de/','/tr/','/alfa/','/assets/app/icon-192.png','/assets/app/icon-512.png','/assets/app/icon-maskable-512.png','/assets/brand/scor-logo-word.png'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE_NAME).then(cache=>cache.addAll(CORE_ASSETS)).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith('scor-cache-')&&key!==CACHE_NAME).map(key=>caches.delete(key)))).then(()=>self.clients.claim()))});
